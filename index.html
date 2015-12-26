@@ -12,6 +12,7 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
 		<script src="processing.js"></script>
+		<script src="index.js" type = "text/javascript"></script>
          <!--<script src="index.js" type="text/processing" data-processing-target="mycanvas"></script>-->
 		
 	</head>
@@ -24,10 +25,16 @@
 				<h2> One in five people suffer from a disability. </h2>
 				<h2> Play this game to find out more. </h2>
 			</center>
+			<center>
+				<button onclick="show(wheelchair);">wheelchair</button>
+				<button onclick="show(vision);">vision</button>
+				<button>3</button>
+				<button>4</button>
+			</center>
 			<center> 
-				<canvas data-processing-sources="wheelchair.pde"></canvas>
-				<canvas data-processing-sources="vision.pde"></canvas>
-				<canvas data-processing-sources="index.pde"></canvas>
+				<canvas id="wheelchair" style="display=none" data-processing-sources="wheelchair.pde"></canvas>
+				<canvas id="vision" style="display=none" data-processing-sources="vision.pde"></canvas>
+				<canvas id="original" style="display=none" data-processing-sources="index.pde"></canvas>
 			</center>
 
 		</div>
