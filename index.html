@@ -7,6 +7,7 @@
 	<head>
 
 		<link rel="stylesheet" href="index.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -32,9 +33,15 @@
 				<button>4</button>
 			</center>
 			<center> 
-				<canvas id="wheelchair" data-processing-sources="wheelchair.pde"></canvas>
-				<canvas id="vision" data-processing-sources="vision.pde"></canvas>
-				<canvas id="original" data-processing-sources="index.pde"></canvas>
+				<div id = "wheelchair">
+					<canvas id="wheelchair" data-processing-sources="wheelchair.pde"></canvas>
+				</div>
+				<div id = "vision">
+					<canvas id="vision" data-processing-sources="vision.pde"></canvas>
+				</div>
+				<div id = "original">
+					<canvas id="original" data-processing-sources="index.pde"></canvas>
+				</div>
 			</center>
 		</div>
 
