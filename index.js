@@ -1,4 +1,3 @@
-
 var layers = [];
 
 void setup() {

@@ -1,6 +1,7 @@
 body {
-  background: rgba(0, 0, 0, 1);
-  
+  background: rgba(0, 0, 0, 0.95);
+  background-image: url("http://fondosbonitos.com/web/wallpapers/wallpaper-minimalista-08/thumbnail/lg.jpg");
+  background-size: 100%;
 }
 
 h1 {
@@ -18,4 +19,8 @@ h2 {
 p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
+}
+
+.title {
+
 }
