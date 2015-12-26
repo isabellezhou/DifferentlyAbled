@@ -11,7 +11,16 @@ $(document).ready(function() {
     $("#original").hide();
 });
 
-$("#wheelchairButton").click(function() {
-    $("#wheelchair").show();
-    
+$(document).ready(function(){
+	$("#wheelchairButton").click(function() {
+	    $("#wheelchair").show();
+	    $("#vision").hide();
+	});
+});
+
+$(document).ready(function(){
+	$("#visionButton").click(function() {
+	    $("#vision").show();
+	    $("#wheelchair").hide();
+	});
 });
