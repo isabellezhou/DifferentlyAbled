@@ -3,6 +3,7 @@ var show = function(whichGame) {
 }
 
 $(document).ready(function() {
+    console.log("trying to hide");
     $("#wheelchair").hide();
     $("#vision").hide();
     $("#original").hide();
