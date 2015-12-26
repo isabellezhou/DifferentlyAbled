@@ -30,10 +30,6 @@ var score = 0;
 var start = false;
 var win = false;
 var gameOver = false;
-var previousKey = 0;
-var move = false;
-var currentKey = 0;
-
 
 var obstacle = {
 
@@ -511,7 +507,7 @@ var game = function() {
         font(200, 50, score, color(255), color(0), 3);
     } else {
         textSize(65);
-        font(200, 150, "Differently\nAbled\nWheelchair edition", color(255), color(0), 3); 
+        font(200, 150, "Differently\nAbled", color(255), color(0), 3); 
     }
 
     winScreen();
@@ -519,73 +515,60 @@ var game = function() {
 };
 
 void keyReleased() {
-    currentKey = keyCode;
-  
-    if (move && previousKey === currentKey)  {
-   
 
-        if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
-            playerX -= 25;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            start = true;
-        }
-
-        if (keyCode === RIGHT && obstacle.l === false && playerX < 330 && playerY < 375) {
-            playerX += 25;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            start = true;
-        }
-
-        if (keyCode === UP && obstacle.d === false && playerY < 375) {
-            playerY -= 25;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            score++;
-            start = true;
-        }
-
-        if (keyCode === DOWN && obstacle.u === false && playerY < 375) {
-            playerY += 25;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            score--;
-            start = true;
-        }
+    if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
+        playerX -= 25;
+        obstacle.l = false;
+        obstacle.r = false;
+        obstacle.u = false;
+        obstacle.d = false;
+        obstacle.l = false;
+        obstacle.r = false;
+        obstacle.u = false;
+        obstacle.d = false;
+        start = true;
     }
 
-    if (move) {
-        move = false;
-    } else {
-        move = true;
+    if (keyCode === RIGHT && obstacle.l === false && playerX < 330 && playerY < 375) {
+        playerX += 25;
+        obstacle.l = false;
+        obstacle.r = false;
+        obstacle.u = false;
+        obstacle.d = false;
+        obstacle.l = false;
+        obstacle.r = false;
+        obstacle.u = false;
+        obstacle.d = false;
+        start = true;
     }
 
-    previousKey = currentKey;
+    if (keyCode === UP && obstacle.d === false && playerY < 375) {
+        playerY -= 25;
+        obstacle.l = false;
+        obstacle.r = false;
+        obstacle.u = false;
+        obstacle.d = false;
+        obstacle.l = false;
+        obstacle.r = false;
+        obstacle.u = false;
+        obstacle.d = false;
+        score++;
+        start = true;
+    }
+
+    if (keyCode === DOWN && obstacle.u === false && playerY < 375) {
+        playerY += 25;
+        obstacle.l = false;
+        obstacle.r = false;
+        obstacle.u = false;
+        obstacle.d = false;
+        obstacle.l = false;
+        obstacle.r = false;
+        obstacle.u = false;
+        obstacle.d = false;
+        score--;
+        start = true;
+    }
 }
 
 void keyPressed() {
@@ -624,9 +607,6 @@ void setup() {
     start = false;
     win = false;
     gameOver = false;
-    move = false;
-    currentKey = 0;
-    previousKey = 0;
 
     obstacle = {
 

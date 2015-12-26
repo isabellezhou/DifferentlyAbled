@@ -424,7 +424,7 @@ var gameOverScreen = function() {
         fill(255);
         textSize(35);
         text("Game Over", 200, 150);
-        text("Click a Key to Play Again", 200, 225);
+        text("Press a Key to Play Again", 200, 225);
     }
 };
 
