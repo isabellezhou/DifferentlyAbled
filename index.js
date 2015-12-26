@@ -1,3 +1,9 @@
 var show = function(whichGame) {
-    document.getElementbyId("\"" + whichGame + "\"").innerHTML.display = "block";
+    $("\"#" + whichGame + "\"").show();
 }
+
+$(document).ready(function() {
+    $("#wheelchair").hide();
+    $("#vision").hide();
+    $("#original").hide();
+});
