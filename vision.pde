@@ -55,12 +55,7 @@ var font = function(x, y, label, pColor, sColor, thickness) {
 
 var gameBackground = function() {
 
-    background(165, 225, 75);
-
-    for (var y = -2500; y < 400; y += 50) {
-        fill(180, 235, 85);
-        rect(0, grassY + y, 400, 25);
-    }
+    background(96, 96, 96);
 
     fill(50, 50, 50, 75);
     rect(0, 0, 35, 400);
@@ -84,7 +79,7 @@ var obstacleFunc = function(x, y, type) {
         fill(100);
     }
     if (type === "tree") {
-        fill(100, 175, 75);
+        fill(64, 64, 64);
     }
 
     rect(x + 2, y + 2, 20, 20);
@@ -111,39 +106,39 @@ var car = function(x, y, color, direction) {
     strokeWeight(1.5);
 
     if (color === "red") {
-        stroke(175, 0, 0);
-        fill(255, 0, 0);
+        stroke(75, 75, 75);
+        fill(60, 60, 60);
     }
     if (color === "blue") {
-        stroke(0, 75, 150);
-        fill(0, 100, 255);
+        stroke(75, 75, 75);
+        fill(60, 60, 60);
     }
     if (color === "orange") {
-        stroke(200, 50, 0);
-        fill(255, 85, 0);
+        stroke(75, 75, 75);
+        fill(60, 60, 60);
     }
     if (color === "yellow") {
-        stroke(200, 200, 0);
-        fill(255, 255, 0);
+        stroke(75, 75, 75);
+        fill(60, 60, 60);
     }
 
     rect(x, y, 45, 20);
 
     if (color === "red") {
-        fill(175, 0, 0);
+        fill(0, 0, 0);
     }
     if (color === "blue") {
-        fill(0, 75, 150);
+        fill(0, 0, 0);
     }
     if (color === "orange") {
-        fill(200, 50, 0);
+        fill(0, 0, 0);
     }
     if (color === "yellow") {
-        fill(200, 200, 0);
+        fill(0, 0, 0);
     }
 
     rect(x, y + 5, 45, 10);
-    fill(255);
+    fill(75);
 
     if (direction === "right") {
         rect(x + 5, y + 3, 28, 14);
@@ -161,7 +156,7 @@ var car = function(x, y, color, direction) {
     rect(x + 28, y + 20, 12, 2);
 
     if (color === "yellow") {
-        fill(200, 200, 0);
+        fill(75, 75, 75);
     }
 
     if (direction === "right") {
@@ -253,14 +248,14 @@ var road3 = function(x, y) {
 var train = function(x, y) {
 
     for (var i = 0; i < 1000; i += 108) {
-        fill(35, 135, 215);
+        fill(60, 60, 60);
         rect(i + x, y, 100, 25);
-        fill(125, 175, 215);
+        fill(80, 80, 80);
         rect(i + x + 5, y + 5, 90, 15);
     }
 
     for (var i = 100; i < 975; i += 108) {
-        fill(210, 214, 126);
+        fill(70, 70, 70);
         rect(i + x, y + 4, 8, 18);
     }
 
@@ -277,17 +272,17 @@ var traintracks = function(x, y) {
 
     fill(75);
     rect(x, y, 400, 25);
-    fill(125);
+    fill(50);
     rect(x, y + 2, 400, 3);
     rect(x, y + 20, 400, 3);
-    fill(65, 35, 15);
+    fill(60, 60, 60);
 
     for (var i = 20; i < 400; i += 30) {
         rect(i + x, y + 5, 5, 15);
     }
 
     if (trainX < 1000 && trainX > -500) {
-        fill(255, 0, 0, 75);
+        fill(60, 60, 60, 75);
         rect(x, y, 400, 25);
     }
 
@@ -296,7 +291,7 @@ var traintracks = function(x, y) {
 
 var logs = function(x, y, w) {
 
-    fill(65, 35, 15);
+    fill(60, 60, 60);
     rect(x, y + 2, w, 20);
 
     for (var i = 0; i < logX.length; i++) {
@@ -312,9 +307,9 @@ var logs = function(x, y, w) {
 
 var water = function(x, y) {
 
-    fill(115, 175, 215);
+    fill(80, 80, 80);
     rect(x, y, 400, 100);
-    fill(255);
+    fill(85);
     rect(x + 15, y, 20, 100);
     rect(x + 365, y, 20, 100);
 
@@ -396,12 +391,12 @@ var eagle = function() {
     //draw the eagle
     fill(255);
     rect(eagleX, eagleY - 15, 20, 15);
-    fill(65, 35, 15);
+    fill(0, 0, 0);
     rect(eagleX, eagleY, 20, 50);
     rect(eagleX - 28, eagleY + 15, 75, 18);
     fill(255);
     rect(eagleX, eagleY + 50, 20, 20);
-    fill(255, 255, 0);
+    fill(0, 0, 0);
     rect(eagleX + 8, eagleY + 70, 5, 10);
     //if the player is too close to the bottom of the screen (too slow)
     if (playerY > 375) {
