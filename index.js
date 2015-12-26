@@ -1,27 +1,36 @@
-
-var layers = [];
+var frontLayer;
+var middleLayer;
+var backLayer;
 
 void setup() {
 	size(800,600);
 	background(10, 30, 84);	
-	layers[0] = new Scroller([0,0,0],800,300,5);
-	layers[1] = new Scroller([71, 93, 204],800,450,3);
-	layers[2] = new Scroller([136, 207, 219],800,575,1);
+	frontLayer = new Scroller([0,0,0],800,300,5);
+	middleLayer = new Scroller([71, 93, 204],800,450,3);
+	backLayer = new Scroller([136, 207, 219],800,575,1);
 }
 
 void draw () {
 	background(10,30,84);
-	for (var i = 0; i < layers.length; i++) {
-		layers[i].addBuilding();
-		layers[i].drawBuildings();
-		layers[i].moveBuildings();
-	}
+	backLayer.addBuilding();
+	backLayer.drawBuildings();
+	backLayer.moveBuildings();
+	middleLayer.addBuilding();
+	middleLayer.drawBuildings();
+	middleLayer.moveBuildings();
+	frontLayer.addBuilding();
+	frontLayer.drawBuildings();
+	frontLayer.moveBuildings();
 }
 	
 class Building {
-	var r, g, b;
-	var width, height;
-	var xPosition, yPosition;
+	var r;
+	var g;
+	var b;
+	var width;
+	var height;
+	var xPosition;
+	var yPosition;
 	var speed;
 	
 	Building (color,w,h,x,y,s) {
@@ -35,20 +44,23 @@ class Building {
 		speed = s;
 	}
 	
-	void drawBuilding() {
-		stroke(r,g,b);
-		fill(r,g,b);
-		rect(xPosition, yPosition, width, height);
-	}	
+		void drawBuilding() {
+			stroke(r,g,b);
+			fill(r,g,b);
+			rect(xPosition, yPosition, width, height);
+		}	
 		
-	void moveBuilding() {
-		xPosition -= speed;
-	}
+		void moveBuilding() {
+			xPosition -= speed;
+		}
 }
 
 class Scroller {
-	var r, g, b;
-	var layerWidth, layerHeight;
+	var r;
+	var g;
+	var b;
+	var layerWidth;
+	var layerHeight;
 	var speed;
 	var buildings = [];
 	var totalWidth;
