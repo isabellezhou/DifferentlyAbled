@@ -1,10 +1,6 @@
-
 var frontLayer;
 var middleLayer;
 var backLayer;
-
-var layers = [];
-
 
 void setup() {
 	size(800,600);
@@ -108,3 +104,4 @@ class Scroller {
 		}
 	}
 }
+	
