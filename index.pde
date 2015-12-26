@@ -511,7 +511,7 @@ var game = function() {
     gameOverScreen();
 };
 
-var keyReleased = function() {
+void keyReleased() {
 
     if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
         playerX -= 25;
@@ -566,14 +566,14 @@ var keyReleased = function() {
         score--;
         start = true;
     }
-};
+}
 
-var keyPressed = function() {
+void keyPressed() {
 
     if (win === true || gameOver === true) {
         Program.restart();
     }
-};
+}
 
 
 void draw() {
