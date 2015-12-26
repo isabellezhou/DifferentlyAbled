@@ -16,9 +16,10 @@ h2 {
 }
 
 h3 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 24px;
-	color: rgba(255,255,255,0.8);
+	font-family: 'Oswald', sans-serif;
+	font-size: 50px;
+	color: rgb(200,255,255);
+	padding:0px;
 }
 
 p {
@@ -27,18 +28,31 @@ p {
 	color: rgba(255,255,255,0.8);
 }
 
+table {
+	padding: 10px;
+}
+
 .title {
-	padding: 15px;
+	padding: 30px;
+}
+
+.game {
+	padding: 30px;
+	padding-bottom:45px;
+}
+
+.intro {
+	padding: 30px;
 	background-image: url("http://fondosbonitos.com/web/wallpapers/wallpaper-minimalista-08/thumbnail/lg.jpg");
 	background-size: 100%;
 }
 
-.game {
-	padding: 15px;
+.video {
+	padding: 30px;
 }
 
 .about {
-	padding: 15px;
+	padding: 30px;
 	background-image: url("http://fondosbonitos.com/web/wallpapers/wallpaper-minimalista-08/thumbnail/lg.jpg");
 	background-size: 100%;
 }
