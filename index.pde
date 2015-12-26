@@ -67,10 +67,12 @@ var gameBackground = function() {
     rect(365, 0, 35, 400);
 };
 
+//draw the player
 var player = function() {
-
+    //player body
     fill(255);
     rect(playerX + 2, playerY + 2, 20, 20);
+    //player eyes
     fill(0);
     rect(playerX + 5, playerY + 5, 5, 5);
     rect(playerX + 14, playerY + 5, 5, 5);
@@ -391,6 +393,7 @@ var eagle = function() {
 
     eagleX = playerX;
 
+    //draw the eagle
     fill(255);
     rect(eagleX, eagleY - 15, 20, 15);
     fill(65, 35, 15);
@@ -400,7 +403,7 @@ var eagle = function() {
     rect(eagleX, eagleY + 50, 20, 20);
     fill(255, 255, 0);
     rect(eagleX + 8, eagleY + 70, 5, 10);
-
+    //if the player is too close to the bottom of the screen (too slow)
     if (playerY > 375) {
         eagleY += 100;
     }
@@ -504,7 +507,7 @@ var game = function() {
         font(200, 50, score, color(255), color(0), 3);
     } else {
         textSize(65);
-        font(200, 150, "Crossy\nRoad", color(255), color(0), 3);
+        font(200, 150, "Differently\nAbled", color(255), color(0), 3); 
     }
 
     winScreen();
@@ -571,18 +574,52 @@ void keyReleased() {
 void keyPressed() {
 
     if (win === true || gameOver === true) {
-        Program.restart();
+        setup();
+        loop();
     }
 }
 
 
 void draw() {
-	//console.log("draw function1");
 	game();
 }
 
 void setup() {
     size(400, 400);
+
+     playerX = 188;
+     playerY = 275;
+     grassY = 100;
+     carX = [-50, -250, -350, 450, 650, 750];
+     trainX = 2000;
+     logX = [random(-250, -200), random(425, 525), random(-300, -250), random(525, 625), random(625, 725), random(-350, -30), random(650, 750)];
+     logY = [75, 50, 25, 0, 50, 25, 0];
+     logW = [random(35, 150), random(35, 150), random(35, 150), random(35, 150), random(35, 150), random(35, 150), random(35, 150)];
+     onLog = [false, false, false, false, false, false, false];
+     roadY1 = [100, 25, -650, -750, -900, -1550, -1725];
+     roadY2 = [-50, -400, -1200, -1325, -1500, -1650, -1800, -1875];
+     roadY3 = [-600, -1100, -2125];
+     railRoadY = [-150, -200, -625, -1125, -1525, -1700, -1750];
+     waterY = -325;
+     eagleX = 188;
+     eagleY = -100;
+     score = 0;
+     start = false;
+     win = false;
+     gameOver = false;
+
+     obstacle = {
+
+        x: [38, 63, 88, 113, 138, 163, 188, 213, 238, 263, 288, 313, 338, 63, 88, 138, 213, 263, 288, 338, 113, 313, 263, 163, 88, 188, 313, 88, 188, 313, 88, 188, 313, 63, 113, 188, 238, 313, 63, 113, 188, 238, 313],
+
+        y: [275, 275, 275, 275, 275, 275, 275, 275, 275, 275, 275, 275, 275, 250, 250, 250, 250, 250, 250, 250, 0, 0, -175, -175, -350, -350, -350, -700, -725, -725, -1150, -1150, -1150, -1450, -1450, -1450, -1450, -1450, -1675, -1675, -1675, -1675, -1675],
+
+        l: false,
+        r: false,
+        u: false,
+        d: false,
+        type: ["tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "tree", "rock", "tree", "tree", "rock", "tree", "tree", "rock", "tree", "tree", "tree", "rock", "tree", "rock", "rock", "tree", "rock", "tree", "rock", "rock"]
+    };
 }
 
 // var frontLayer;
