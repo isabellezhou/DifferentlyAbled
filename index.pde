@@ -29,7 +29,7 @@ var eagleY = -100;
 var score = 0;
 var start = false;
 var win = false;
-var gameOver = false;
+var firstTime = true;
 
 var obstacle = {
 
@@ -447,75 +447,93 @@ var winScreen = function() {
     }
 };
 
+var introScreen = function() {
+    console.log("introScreen");
+    noLoop();
+    fill(0, 125, 255, 200);
+    rect(0, 0, 400, 50);
+    fill(255);
+    textSize(25);
+    text("Here is some introductory material...", 200, 150);
+    text(">>>", 350, 375);
+};
+
 var game = function() {
-	//console.log("game function");
+
+    //console.log("game function");
     textFont(createFont("Impact"));
     textAlign(CENTER, CENTER);
     
     noStroke();
-
-    gameBackground();
-
-    if (start === true) {
-        grassY += 0.5;
-        playerY += 0.5;
-    }
-
-    for (var i = 0; i < carX.length; i++) {
-        carX[i] += i > 2 ? -2 : 2;
-    }
-
-    logX[0] += 2;
-    logX[1] -= 2;
-    logX[2] += 2;
-    logX[3] -= 2;
-    logX[4] -= 2;
-    logX[5] += 2;
-    logX[6] -= 2;
-    
-    trainX -= 20;
-
-    for (var i = 0; i < roadY1.length; i++) {
-        road1(0, grassY + roadY1[i]);
-    }
-    for (var i = 0; i < roadY2.length; i++) {
-        road2(0, grassY + roadY2[i]);
-    }
-    for (var i = 0; i < roadY3.length; i++) {
-        road3(0, grassY + roadY3[i]);
-    }
-    for (var i = 0; i < railRoadY.length; i++) {
-        traintracks(0, grassY + railRoadY[i]);
-    }
-
-    waterY = -325;
-
-    while (waterY > -2000) {
-        water(0, grassY + waterY);
-        waterY -= 550;
-    }
-
-    for (var i = 0; i < obstacle.x.length; i++) {
-        obstacleFunc(obstacle.x[i], obstacle.y[i] + grassY, obstacle.type[i]);
-    }
-
-    player();
-    eagle();
-    
-    if (start === true) {
-        textSize(50);
-        font(200, 50, score, color(255), color(0), 3);
+    if (firstTime) {
+        introScreen();
     } else {
-        textSize(65);
-        font(200, 150, "Differently\nAbled", color(255), color(0), 3); 
-    }
+        gameBackground();
 
-    winScreen();
-    gameOverScreen();
+        if (start === true) {
+            grassY += 0.5;
+            playerY += 0.5;
+        }
+
+        for (var i = 0; i < carX.length; i++) {
+            carX[i] += i > 2 ? -2 : 2;
+        }
+
+        logX[0] += 2;
+        logX[1] -= 2;
+        logX[2] += 2;
+        logX[3] -= 2;
+        logX[4] -= 2;
+        logX[5] += 2;
+        logX[6] -= 2;
+        
+        trainX -= 20;
+
+        for (var i = 0; i < roadY1.length; i++) {
+            road1(0, grassY + roadY1[i]);
+        }
+        for (var i = 0; i < roadY2.length; i++) {
+            road2(0, grassY + roadY2[i]);
+        }
+        for (var i = 0; i < roadY3.length; i++) {
+            road3(0, grassY + roadY3[i]);
+        }
+        for (var i = 0; i < railRoadY.length; i++) {
+            traintracks(0, grassY + railRoadY[i]);
+        }
+
+        waterY = -325;
+
+        while (waterY > -2000) {
+            water(0, grassY + waterY);
+            waterY -= 550;
+        }
+
+        for (var i = 0; i < obstacle.x.length; i++) {
+            obstacleFunc(obstacle.x[i], obstacle.y[i] + grassY, obstacle.type[i]);
+        }
+
+        player();
+        eagle();
+        
+        if (start === true) {
+            textSize(50);
+            font(200, 50, score, color(255), color(0), 3);
+        } else {
+            textSize(65);
+            font(200, 150, "Differently\nAbled\nOriginal", color(255), color(0), 3); 
+        }
+
+        winScreen();
+        gameOverScreen();
+    }
 };
 
 void keyReleased() {
-
+    if (firstTime && keyCode === RIGHT) {
+        firstTime = false;
+        loop();
+    }
     if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
         playerX -= 25;
         obstacle.l = false;
@@ -607,6 +625,7 @@ void setup() {
     start = false;
     win = false;
     gameOver = false;
+    
 
     obstacle = {
 
