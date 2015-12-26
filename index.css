@@ -1,12 +1,11 @@
 body {
-  background: rgba(0, 0, 0, 0.95);
   background-image: url("http://fondosbonitos.com/web/wallpapers/wallpaper-minimalista-08/thumbnail/lg.jpg");
   background-size: 100%;
 }
 
 h1 {
 	font-family: 'Oswald', sans-serif;
-	font-size: 48px;
+	font-size: 60px;
 	color: rgb(200,255,255);
 }
 
@@ -21,6 +20,6 @@ p {
 	font-size: 18px;
 }
 
-.title {
-
+.game {
+	color: rgba(0,0,0,0.95);
 }
