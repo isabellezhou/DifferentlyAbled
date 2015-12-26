@@ -34,11 +34,11 @@ table {
 
 .title {
 	padding: 30px;
+	padding-bottom: 0px;
 }
 
 .game {
 	padding: 30px;
-	padding-bottom:45px;
 }
 
 .intro {
