@@ -1,26 +1,26 @@
 body {
-  background-color: rgb(0,0,0);
-  background-size: 100% 100%;
+	background-image: url("http://www.freebiesgallery.com/wp-content/uploads/2013/08/light-blue-background-3.jpg");
+	background-size: 100% 100%;
 }
 
 h1 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 72px;
-	color: rgb(200,255,255);
+	color: rgb(0,0,102);
 }
 
 h2 {
 	font-family: 'Roboto', sans-serif;
 	font-size: 24px;
 	font-weight: 300;
-	color: rgb(255,255,255);
+	color: rgb(0,0,0);
 	padding:0px;
 }
 
 h3 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 50px;
-	color: rgb(200,255,255);
+	color: rgb(0,204,204);
 	padding-bottom:0px;
 }
 
@@ -28,7 +28,7 @@ p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	font-weight: 300;
-	color: rgba(255,255,255,0.8);
+	color: rgba(0,0,0,0.8);
 }
 
 table {
@@ -37,26 +37,25 @@ table {
 
 .title {
 	padding: 30px;
-	background-image: url("http://fondosbonitos.com/web/wallpapers/wallpaper-minimalista-08/thumbnail/lg.jpg");
-	background-size: 100%;
+	
 }
 
 .game {
 	padding: 30px;
+	background-color: rgba(255,255,255,0.5);
+	background-size: 100% 100%;
 }
 
 .intro {
 	padding: 30px;
-	background-image: url("http://fondosbonitos.com/web/wallpapers/wallpaper-minimalista-08/thumbnail/lg.jpg");
-	background-size: 100%;
 }
 
 .video {
 	padding: 30px;
+	background-color: rgba(255,255,255,0.5);
+	background-size: 100% 100%;
 }
 
 .about {
 	padding: 30px;
-	background-image: url("http://fondosbonitos.com/web/wallpapers/wallpaper-minimalista-08/thumbnail/lg.jpg");
-	background-size: 100%;
 }
