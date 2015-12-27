@@ -513,7 +513,7 @@ var game = function() {
         textSize(55);
         font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
         textSize(30);
-        font(200, 150, "\n\n\n(simulated motor disability)", color(255), color(0), 3); 
+        font(200, 150, "\n\n\n(with simulated motor disability)", color(255), color(0), 3); 
     }
 
     winScreen();

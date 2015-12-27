@@ -6,7 +6,7 @@
 
 $(document).ready(function() {
     // $("#begin").show();
-    $("#wheelchair").hide();
+    $("#wheelchair").show();
     $("#vision").hide();
     $("#original").hide();
 });
