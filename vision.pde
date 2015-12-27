@@ -501,8 +501,10 @@ var game = function() {
         textSize(50);
         font(200, 50, score, color(255), color(0), 3);
     } else {
-        textSize(65);
-        font(200, 150, "Differently\nAbled", color(255), color(0), 3); 
+        textSize(55);
+        font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
+        textSize(30);
+        font(200, 150, "\n\n\n(simulated visual disability)", color(255), color(0), 3);
     }
 
     winScreen();
