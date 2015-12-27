@@ -444,7 +444,7 @@ var winScreen = function() {
 
 var game = function() {
 	//console.log("game function");
-    textFont(createFont("Impact"));
+    textFont(createFont("Oswald"));
     textAlign(CENTER, CENTER);
     
     noStroke();

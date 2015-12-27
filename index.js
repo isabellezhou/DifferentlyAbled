@@ -5,7 +5,7 @@
 // }
 
 $(document).ready(function() {
-    console.log("trying to hide");
+    // $("#begin").show();
     $("#wheelchair").hide();
     $("#vision").hide();
     $("#original").hide();
@@ -13,14 +13,27 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 	$("#wheelchairButton").click(function() {
+		// $("#begin").hide();
 	    $("#wheelchair").show();
 	    $("#vision").hide();
+	    $("#original").hide();
 	});
 });
 
 $(document).ready(function(){
 	$("#visionButton").click(function() {
+		// $("#begin").hide();
 	    $("#vision").show();
 	    $("#wheelchair").hide();
+	    $("#original").hide();
+	});
+});
+
+$(document).ready(function(){
+	$("#originalButton").click(function() {
+		// $("#begin").hide();
+	    $("#vision").hide();
+	    $("#wheelchair").hide();
+	    $("#original").show();
 	});
 });
