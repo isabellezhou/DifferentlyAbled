@@ -6,31 +6,31 @@ body {
 h1 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 72px;
-	color: rgb(0,255,255);
+	color: rgb(0,210,210);
 	padding:0px;
 }
 
 h2 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 25px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 30px;
 	font-weight: 500;
-	color: rgb(255,255,255);
+	color: rgb(255,255,240);
 	padding:0px;
 }
 
 h3 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 50px;
-	color: rgb(0,255,255);
-	padding-bottom:0px;
+	color: rgb(0,210,210);
+	padding:0px;
 }
 
 p {
 	font-family: 'Roboto', sans-serif;
-	font-size: 22px;
+	font-size: 24px;
 	font-weight: 300;
-	color: rgba(255,255,255,1);
-	padding:0px;
+	color: rgba(255,255,245,1);
+	padding:12px;
 }
 
 .title {
