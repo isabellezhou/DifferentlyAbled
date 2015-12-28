@@ -1,26 +1,27 @@
 body {
-	background-image: url("http://www.freebiesgallery.com/wp-content/uploads/2013/08/light-blue-background-3.jpg");
+	background-image: url("http://www.hdwallpaperscool.com/wp-content/uploads/2015/04/stars-hd-wallpaper-download-stars-images-free.jpg");
 	background-size: 100% 100%;
 }
 
 h1 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 72px;
-	color: rgb(0,0,153);
+	color: rgb(0,255,255);
+	padding:0px;
 }
 
 h2 {
 	font-family: 'Roboto', sans-serif;
-	font-size: 24px;
-	font-weight: 300;
-	color: rgb(0,0,0);
+	font-size: 25px;
+	font-weight: 500;
+	color: rgb(255,255,255);
 	padding:0px;
 }
 
 h3 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 50px;
-	color: rgb(0,0,153);
+	color: rgb(0,255,255);
 	padding-bottom:0px;
 }
 
@@ -28,34 +29,34 @@ p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 22px;
 	font-weight: 300;
-	color: rgba(0,0,0,0.8);
-}
-
-table {
-	
+	color: rgba(255,255,255,1);
+	padding:0px;
 }
 
 .title {
 	padding: 30px;
-	
+	padding-bottom: 45px;
+	padding-top: 15px;
 }
 
-.game {
+/*.game {
 	padding: 30px;
-	background-color: rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.9);
 	background-size: 100% 100%;
-}
+}*/
 
 .intro {
 	padding: 30px;
+	background-color: rgba(0,0,0,0.6);
 }
 
 .video {
 	padding: 30px;
-	background-color: rgba(255,255,255,0.5);
+	/*background-color: rgba(255,255,255,0.5);*/
 	background-size: 100% 100%;
 }
 
 .about {
 	padding: 30px;
+	background-color: rgba(0,0,0,0.6);
 }
