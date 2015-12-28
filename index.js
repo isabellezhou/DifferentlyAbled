@@ -9,31 +9,45 @@ $(document).ready(function() {
     $("#wheelchair").show();
     $("#vision").hide();
     $("#original").hide();
+    $("#memory").hide();
+
 });
 
 $(document).ready(function(){
 	$("#wheelchairButton").click(function() {
-		// $("#begin").hide();
 	    $("#wheelchair").show();
 	    $("#vision").hide();
 	    $("#original").hide();
+        $("#memory").hide();
+
 	});
 });
 
 $(document).ready(function(){
 	$("#visionButton").click(function() {
-		// $("#begin").hide();
 	    $("#vision").show();
 	    $("#wheelchair").hide();
 	    $("#original").hide();
+        $("#memory").hide();
 	});
 });
 
 $(document).ready(function(){
-	$("#originalButton").click(function() {
-		// $("#begin").hide();
+	$("#memoryButton").click(function() {
 	    $("#vision").hide();
 	    $("#wheelchair").hide();
-	    $("#original").show();
+        $("#original").hide();
+	    $("#memory").show();
 	});
+});
+
+
+$(document).ready(function(){
+    $("#originalButton").click(function() {
+        $("#vision").hide();
+        $("#wheelchair").hide();
+        $("#original").show();
+        $("#memory").hide();
+
+    });
 });
