@@ -31,6 +31,8 @@ var start = false;
 var win = false;
 var firstTime = true;
 var showObstacles = true;
+var playGame = false;
+var titleScreen = false;
 
 var obstacle = {
 
@@ -460,6 +462,17 @@ var introScreen = function() {
     textSize(25);
     text("Here is some introductory material...", 200, 150);
     text(">>>", 350, 375);
+    titleScreen = true;
+};
+
+var showTitleScreen = function() {
+    noLoop();
+    textSize(55);
+    font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
+    textSize(30);
+    font(200, 150, "\n\n\n(simulated memory disability)", color(255), color(0), 3);
+    font(200, 250, "\n\n\npress right arrow to start", color(255), color(0), 3);   
+    playGame = true;
 };
 
 var game = function() {
@@ -470,7 +483,7 @@ var game = function() {
     noStroke();
     if (firstTime) {
         introScreen();
-    } else {
+    } else if (playGame) {
         gameBackground();
 
         if (start === true) {
@@ -526,7 +539,7 @@ var game = function() {
             textSize(55);
             font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
             textSize(30);
-            font(200, 150, "\n\n\n(with simulated memory disability)", color(255), color(0), 3);
+            font(200, 150, "\n\n\n(simulated memory disability)", color(255), color(0), 3);
         }
 
         winScreen();
@@ -540,10 +553,18 @@ void keyReleased() {
     } else {
         showObstacles = true;
     }
-    if (firstTime && keyCode === RIGHT) {
-        firstTime = false;
+    if (playGame) {
         loop();
     }
+    if (firstTime && keyCode === RIGHT) {
+        firstTime = false;
+    }
+    if (titleScreen) {
+        titleScreen = false;
+        gameBackground();
+        showTitleScreen();
+    }
+    
     if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
         playerX -= 25;
         obstacle.l = false;
@@ -635,6 +656,10 @@ void setup() {
     start = false;
     win = false;
     gameOver = false;
+    firstTime = true;
+    showObstacles = true;
+    playGame = false;
+    titleScreen = false;
     
 
     obstacle = {
