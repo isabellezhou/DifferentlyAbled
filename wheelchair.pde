@@ -478,9 +478,7 @@ var showTitleScreen = function() {
     playGame = true;        
 };      
 
-
 var game = function() {
-	//console.log("game function");
     textFont(createFont("Oswald"));
     textAlign(CENTER, CENTER);
     
@@ -552,7 +550,7 @@ var game = function() {
 
 void keyReleased() {
     currentKey = keyCode;
-    if (playGame) {     
+    if (playGame && keyCode === RIGHT) {     
         loop();     
     }       
     if (firstTime && keyCode === RIGHT) {       

@@ -1,8 +1,3 @@
-// var show = function(whichGame) {
-//     var id = "\"#" + whichGame + "\"";
-//     console.log(id);
-//     $(id).show();
-// }
 
 $(document).ready(function() {
     // $("#begin").show();

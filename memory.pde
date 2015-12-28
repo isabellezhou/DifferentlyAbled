@@ -30,6 +30,7 @@ var score = 0;
 var start = false;
 var win = false;
 var firstTime = true;
+var secondTime = false; 
 var showObstacles = true;
 var playGame = false;
 var titleScreen = false;
@@ -455,13 +456,15 @@ var winScreen = function() {
 };
 
 var introScreen = function() {
-    noLoop();
-    fill(0, 125, 255, 200);
-    rect(0, 0, 400, 50);
-    fill(255);
-    textSize(25);
-    text("Here is some introductory material...", 200, 150);
-    text(">>>", 350, 375);
+    if (!secondTime) {
+        noLoop();
+        fill(0, 125, 255, 200);
+        rect(0, 0, 400, 50);
+        fill(255);
+        textSize(25);
+        text("Here is some introductory material...", 200, 150);
+        text(">>>", 350, 375);
+    }
     titleScreen = true;
 };
 
@@ -476,7 +479,6 @@ var showTitleScreen = function() {
 };
 
 var game = function() {
-
     textFont(createFont("Oswald"));
     textAlign(CENTER, CENTER);
     
@@ -553,7 +555,7 @@ void keyReleased() {
     } else {
         showObstacles = true;
     }
-    if (playGame) {
+    if (playGame && keyCode === RIGHT) {
         loop();
     }
     if (firstTime && keyCode === RIGHT) {
@@ -624,6 +626,7 @@ void keyPressed() {
 
     if (win === true || gameOver === true) {
         setup();
+        secondTime = true;
         loop();
     }
 }
@@ -657,6 +660,7 @@ void setup() {
     win = false;
     gameOver = false;
     firstTime = true;
+    secondTime = false;
     showObstacles = true;
     playGame = false;
     titleScreen = false;
