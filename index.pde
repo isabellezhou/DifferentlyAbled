@@ -1,14 +1,5 @@
-//Instructions
 
-/**
- * Use the up arrow key to move foward
- * You can also use the left, right, and down arrow keys to move
- * Avoid the cars, trains, and water (use the logs to cross)
- * If you move to slow the eagle will catch you (once you see it you can't escape it)
- * The green and gray squares are trees and rocks
- * Score 100 points to win
- * Have fun!
-**/
+//inspired by CrossyRoad on Khan Academy
 
 var playerX = 188;
 var playerY = 275;
@@ -29,6 +20,7 @@ var eagleY = -100;
 var score = 0;
 var start = false;
 var win = false;
+var gameOver = false;
 var firstTime = true;
 var secondTime = false;
 var playGame = false;
@@ -433,7 +425,7 @@ var gameOverScreen = function() {
 
 var winScreen = function() {
 
-    if (score === 100) {
+    if (score === 25) {
         win = true;
     }
 
@@ -450,16 +442,19 @@ var winScreen = function() {
     }
 };
 
-var introScreen = function() {
-    noLoop();
-    fill(0, 125, 255, 200);
-    rect(0, 0, 400, 50);
-    fill(255);
-    textSize(25);
-    text("Here is some introductory material...", 200, 150);
-    text(">>>", 350, 375);
-};
-
+var introScreen = function() {   
+    if (!secondTime) {
+        noLoop();       
+        fill(0, 125, 255, 200);     
+        rect(0, 0, 400, 50);        
+        fill(255);      
+        textSize(25);       
+        text("Here is some introductory material...", 200, 150);        
+        text(">>>", 350, 375);
+    }      
+    titleScreen = true;     
+};      
+            
 var showTitleScreen = function() {      
     noLoop();       
     textSize(55);       
@@ -468,7 +463,7 @@ var showTitleScreen = function() {
     font(200, 150, "\n\n\n(without simulated disability)", color(255), color(0), 3);   
     font(200, 250, "\n\n\npress right arrow to start", color(255), color(0), 3);   
     playGame = true;        
-};    
+};      
 
 var game = function() {
 
@@ -529,7 +524,12 @@ var game = function() {
         
         if (start === true) {
             textSize(50);
-            font(200, 50, score, color(255), color(0), 3);
+            if (score === 1) {
+                font(200, 50, score + " meter", color(255), color(0), 3);
+
+            } else {
+                font(200, 50, score + " meters", color(255), color(0), 3);
+            }
         } else {
             textSize(55);
             font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
@@ -605,7 +605,9 @@ void keyReleased() {
         obstacle.r = false;
         obstacle.u = false;
         obstacle.d = false;
-        score--;
+        if (score > 0) {
+            score--;
+        }
         start = true;
     }
 }
@@ -614,6 +616,7 @@ void keyPressed() {
 
     if (win === true || gameOver === true) {
         setup();
+        secondTime = true;
         loop();
     }
 }
@@ -646,6 +649,10 @@ void setup() {
     start = false;
     win = false;
     gameOver = false;
+    firstTime = true;
+    secondTime = false;
+    playGame = false;
+    titleScreen = false;
     
 
     obstacle = {

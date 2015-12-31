@@ -1,5 +1,6 @@
-//Instructions
-//inspired by CrossyRoad on KhanAcademy
+
+//inspired by CrossyRoad on Khan Academy
+
 
 var playerX = 188;
 var playerY = 275;
@@ -21,9 +22,6 @@ var score = 0;
 var start = false;
 var win = false;
 var gameOver = false;
-var previousKey = 0;
-var move = false;
-var currentKey = 0;
 var firstTime = true;
 var secondTime = false;
 var showObstacles = true;
@@ -530,9 +528,15 @@ var game = function() {
         player();
         eagle();
         
-        if (start === true && score >= 0) {
+        if (start === true) {
             textSize(50);
-            font(200, 50, score + " meters", color(255), color(0), 3);
+            if (score === 1) {
+                font(200, 50, score + " meter", color(255), color(0), 3);
+
+            } else {
+                font(200, 50, score + " meters", color(255), color(0), 3);
+            }
+            
         } else {
             // textSize(55);
             // font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
@@ -654,10 +658,6 @@ void setup() {
     start = false;
     win = false;
     gameOver = false;
-    move = false;
-    currentKey = 0;
-    previousKey = 0;
-    firstTime = true;
     secondTime = false;
     playGame = false;
     titleScreen = false;
