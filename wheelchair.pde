@@ -447,16 +447,31 @@ var winScreen = function() {
 };
 
 var introScreen = function() {   
+    // if (!secondTime) {
+    //     noLoop();       
+    //     fill(0, 125, 255, 200);     
+    //     rect(0, 0, 400, 50);        
+    //     fill(255);      
+    //     textSize(25);       
+    //     text("Motor disabilities range from temporary injuries resulting from accidents to serious diseases such as cerebral palsy. Treatments can include physical, occupational, and speech therapy.\n\n In this game, it takes two keypresses to move once and you are unable to move left and right.", 200, 150);        
+    //     text(">>>", 350, 375);
+    // }      
+    // titleScreen = true;
     if (!secondTime) {
-        noLoop();       
-        fill(0, 125, 255, 200);     
-        rect(0, 0, 400, 50);        
+        noLoop();
+        fill(0, 0, 0, 200);
+        rect(0, 0, 400, 400);                  
+        textFont(createFont("Oswald")); 
         fill(255);      
-        textSize(25);       
-        text("Motor disabilities range from temporary injuries resulting from accidents to serious diseases such as cerebral palsy. Treatments can include physical, occupational, and speech therapy.\n\n In this game, it takes two keypresses to move once and you are unable to move left and right.", 200, 150);        
-        text(">>>", 350, 375);
+        textSize(30);     
+        text("\nMOTOR DISABILITIES\n\n", 200, 50);
+        textFont(createFont("Roboto"));
+        textSize(20);
+        text("\n\n\nVisual disabilities can greatly hinder one's \n ability to live and work, but with tools\nsuch as guide dogs, braille displays, \n eyeglasses, and canes, the differently abled \n can lead relatively normal lives. \n \n Play this game to find out what it's like \n to navigate the world with limited color \n perception!", 200, 150);  
+        textSize(20);   
+        text("press right arrow to continue >>>", 250, 375);
     }      
-    titleScreen = true;     
+    titleScreen = true;          
 };      
             
 var showTitleScreen = function() {      

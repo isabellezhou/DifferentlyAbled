@@ -435,7 +435,7 @@ var winScreen = function() {
         fill(255);
         textSize(35);
         text("YOU WIN!", 200, 150);
-        text("right arrow to play again", 200, 225);
+        text("Press a Key to Play Again", 200, 225);
     }
 };
 
