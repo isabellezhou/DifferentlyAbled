@@ -1,10 +1,6 @@
 
 $(document).ready(function() {
-    $("#instructions").show();
-    $("#wheelchair").hide();
     $("#wheelchair").show();
-    $("#wheelchairCanvas").focus();
-	$("#wheelchairCanvas").scrollTop(0);
     $("#vision").hide();
     $("#original").hide();
     $("#memory").hide();
@@ -34,7 +30,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$("#memoryButton").click(function() {
-		$("#instructions").hide();
 		$("#memory").show();
 	    $("#memoryCanvas").focus();
 	    $("#vision").hide();
@@ -46,7 +41,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#originalButton").click(function() {
-    	$("#instructions").hide();
     	$("#original").show();
         $("#originalCanvas").focus();
         $("#vision").hide();
