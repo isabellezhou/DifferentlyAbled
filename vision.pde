@@ -1,14 +1,5 @@
 //Instructions
-
-/**
- * Use the up arrow key to move foward
- * You can also use the left, right, and down arrow keys to move
- * Avoid the cars, trains, and water (use the logs to cross)
- * If you move to slow the eagle will catch you (once you see it you can't escape it)
- * The green and gray squares are trees and rocks
- * Score 100 points to win
- * Have fun!
-**/
+//inspired by CrossyRoad on KhanAcademy
 
 var playerX = 188;
 var playerY = 275;
@@ -433,7 +424,7 @@ var gameOverScreen = function() {
 
 var winScreen = function() {
 
-    if (score === 100) {
+    if (score === 25) {
         win = true;
     }
 
@@ -528,9 +519,9 @@ var game = function() {
         player();
         eagle();
         
-        if (start === true) {
+        if (start === true && score >= 0) {
             textSize(50);
-            font(200, 50, score, color(255), color(0), 3);
+            font(200, 50, score + " meters", color(255), color(0), 3);
         } else {
             // textSize(55);
             // font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
@@ -608,7 +599,9 @@ void keyReleased() {
         obstacle.r = false;
         obstacle.u = false;
         obstacle.d = false;
-        score--;
+        if (score > 0) {
+            score--;
+        }
         start = true;
     }
 }
