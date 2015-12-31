@@ -25,6 +25,14 @@ h3 {
 	padding:0px;
 }
 
+h4 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: 300;
+	color: rgba(255,255,245,0);
+	padding:0px;
+}
+
 p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 24px;

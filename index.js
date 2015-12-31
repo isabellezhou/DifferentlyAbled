@@ -1,8 +1,14 @@
 
 $(document).ready(function() {
     // $("#begin").show();
+<<<<<<< Updated upstream
     $("#instructions").show();
     $("#wheelchair").hide();
+=======
+    $("#wheelchair").show();
+    $("#wheelchairCanvas").focus();
+	$("#wheelchairCanvas").scrollTop(0);
+>>>>>>> Stashed changes
     $("#vision").hide();
     $("#original").hide();
     $("#memory").hide();
@@ -11,7 +17,6 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 	$("#wheelchairButton").click(function() {
-		$("#instructions").hide();
 	    $("#wheelchair").show();
 	    $("#wheelchairCanvas").focus();
 	    $("#vision").hide();
@@ -23,7 +28,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$("#visionButton").click(function() {
-		$("#instructions").hide();
 	    $("#vision").show();
 	    $("#visionCanvas").focus();
 	    $("#wheelchair").hide();
@@ -34,9 +38,12 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$("#memoryButton").click(function() {
+<<<<<<< Updated upstream
 		$("#instructions").hide();
 		$("#memory").show();
 	    $("#memoryCanvas").focus();
+=======
+>>>>>>> Stashed changes
 	    $("#vision").hide();
 	    $("#wheelchair").hide();
         $("#original").hide();
@@ -46,9 +53,12 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#originalButton").click(function() {
+<<<<<<< Updated upstream
     	$("#instructions").hide();
     	$("#original").show();
         $("#originalCanvas").focus();
+=======
+>>>>>>> Stashed changes
         $("#vision").hide();
         $("#wheelchair").hide();
         $("#memory").hide();
