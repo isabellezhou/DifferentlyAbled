@@ -116,35 +116,35 @@ var car = function(x, y, color, direction) {
         strokeWeight(1.5);
 
         if (color === "red") {
-            stroke(175, 0, 0);
-            fill(255, 0, 0);
+        stroke(153, 0, 76);
+        fill(204, 0, 102);
         }
         if (color === "blue") {
-            stroke(0, 75, 150);
-            fill(0, 100, 255);
+        stroke(51, 0, 102);
+        fill(76, 0, 153);
         }
         if (color === "orange") {
-            stroke(200, 50, 0);
-            fill(255, 85, 0);
+        stroke(255, 102, 178);
+        fill(255, 153, 204);
         }
         if (color === "yellow") {
-            stroke(200, 200, 0);
-            fill(255, 255, 0);
+        stroke(0, 128, 255);
+        fill(51, 153, 255);
         }
 
         rect(x, y, 45, 20);
 
         if (color === "red") {
-            fill(175, 0, 0);
+        fill(153, 0, 76);
         }
         if (color === "blue") {
-            fill(0, 75, 150);
+        fill(76, 0, 153);
         }
         if (color === "orange") {
-            fill(200, 50, 0);
+        fill(255, 102, 178);
         }
         if (color === "yellow") {
-            fill(200, 200, 0);
+        fill(0, 128, 255);
         }
 
         rect(x, y + 5, 45, 10);
@@ -196,7 +196,7 @@ var car = function(x, y, color, direction) {
 
 var road1 = function(x, y) {
 
-    fill(75);
+    fill(0);
     rect(x, y, 400, 25);
 
     car(carX[0], y + 2, "red", "right");
@@ -206,7 +206,7 @@ var road1 = function(x, y) {
 
 var road2 = function(x, y) {
 
-    fill(75);
+    fill(0);
     rect(x, y, 400, 50);
 
     for (var x = 20; x < 400; x += 65) {
@@ -224,7 +224,7 @@ var road2 = function(x, y) {
 
 var road3 = function(x, y) {
 
-    fill(75);
+    fill(0);
     rect(x, y, 400, 150);
 
     fill(100);
