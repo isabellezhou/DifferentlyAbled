@@ -30,6 +30,9 @@ var score = 0;
 var start = false;
 var win = false;
 var firstTime = true;
+var secondTime = false;
+var playGame = false;
+var titleScreen = false;
 
 var obstacle = {
 
@@ -457,6 +460,16 @@ var introScreen = function() {
     text(">>>", 350, 375);
 };
 
+var showTitleScreen = function() {      
+    noLoop();       
+    textSize(55);       
+    font(200, 150, "DifferentlyAbled", color(255), color(0), 3);        
+    textSize(30);       
+    font(200, 150, "\n\n\n(without simulated disability)", color(255), color(0), 3);   
+    font(200, 250, "\n\n\npress right arrow to start", color(255), color(0), 3);   
+    playGame = true;        
+};    
+
 var game = function() {
 
     textFont(createFont("Oswald"));
@@ -530,9 +543,17 @@ var game = function() {
 };
 
 void keyReleased() {
-    if (firstTime && keyCode === RIGHT) {
-        firstTime = false;
-        loop();
+    
+    if (playGame && keyCode === RIGHT) {     
+        loop();     
+    }       
+    if (firstTime && keyCode === RIGHT) {       
+        firstTime = false;      
+    }       
+    if (titleScreen) {      
+        titleScreen = false;        
+        gameBackground();       
+        showTitleScreen();      
     }
     if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
         playerX -= 25;

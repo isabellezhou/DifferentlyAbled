@@ -456,7 +456,7 @@ var introScreen = function() {
         text("complete blindness, there are varying degrees of disabilities.", 200, 200);        
         text("Guide dogs, braille displays, and canes are some of the many ", 200, 250);  
         text("options that the visually impaired use to live normal lives. ", 200, 300);        
-        text("Visual disabilities in the  developing world are often caused by disease and are preventable.", 200, 350);  
+        text("Visual disabilities in the  developing world are often", 200, 350);  
         text("caused by disease and are preventable.", 200, 400);   
 
         textSize(25);   
