@@ -438,7 +438,7 @@ var winScreen = function() {
         fill(255, 125, 25, 200);
         rect(0, 125, 400, 50);
         fill(0, 125, 255, 200);
-        rect(0, 200, 400, 50);
+        rect(0, 200, 400, s50);
         fill(255);
         textSize(35);
         text("YOU WIN!", 200, 150);

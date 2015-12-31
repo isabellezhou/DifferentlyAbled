@@ -437,7 +437,7 @@ var winScreen = function() {
         rect(0, 200, 400, 50);
         fill(255);
         textSize(35);
-        text("You Win!", 200, 150);
+        text("YOU WIN!", 200, 150);
         text("Press a Key to Play Again", 200, 225);
 
     }
@@ -445,19 +445,25 @@ var winScreen = function() {
 
 var introScreen = function() {   
     if (!secondTime) {
-        noLoop();       
-        fill(0, 125, 255, 200);     
-        rect(0, 0, 400, 50);        
+        noLoop();
+        fill(0, 0, 0, 200);
+        rect(0, 0, 400, 400);                  
+        textFont(createFont("Oswald")); 
         fill(255);      
-        textSize(25);       
-        text("Here is some introductory material...", 200, 150);        
-        text(">>>", 350, 375);
+        textSize(30);     
+        text("\nWITHOUT DISABILITY\n\n", 200, 50);
+        textFont(createFont("Roboto"));
+        textSize(20);
+        text("Any disability can greatly hinder one's \n ability to live and work. \n \n Play this game to find out what it's like \n to navigate the world without a \n disability!", 200, 150);  
+        textSize(20);   
+        text("press right arrow to continue >>>", 250, 375);
     }      
-    titleScreen = true;     
+    titleScreen = true;               
 };      
             
 var showTitleScreen = function() {      
-    noLoop();       
+    noLoop(); 
+    textFont(createFont("Oswald"));      
     textSize(55);       
     font(200, 150, "DifferentlyAbled", color(255), color(0), 3);        
     textSize(30);       
