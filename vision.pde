@@ -30,6 +30,14 @@ var score = 0;
 var start = false;
 var win = false;
 var gameOver = false;
+var previousKey = 0;
+var move = false;
+var currentKey = 0;
+var firstTime = true;
+var secondTime = false;
+var showObstacles = true;
+var playGame = false;
+var titleScreen = false;
 
 var obstacle = {
 
@@ -442,76 +450,113 @@ var winScreen = function() {
     }
 };
 
+var introScreen = function() {   
+    if (!secondTime) {
+        noLoop();       
+        fill(0, 125, 255, 200);     
+        rect(0, 0, 400, 50);        
+        fill(255);      
+        textSize(25);       
+        text("Here is some introductory material...", 200, 150);        
+        text(">>>", 350, 375);
+    }      
+    titleScreen = true;     
+};      
+                        
+var showTitleScreen = function() {      
+    noLoop();       
+    textSize(55);       
+    font(200, 150, "DifferentlyAbled", color(255), color(0), 3);        
+    textSize(30);       
+    font(200, 150, "\n\n\n(simulated visual disability)", color(255), color(0), 3);   
+    font(200, 250, "\n\n\npress right arrow to start", color(255), color(0), 3);   
+    playGame = true;        
+};      
+
 var game = function() {
-	//console.log("game function");
     textFont(createFont("Oswald"));
     textAlign(CENTER, CENTER);
     
     noStroke();
+    if (firstTime) {
+        introScreen();
+    } else if (playGame) {
+        gameBackground();
+        if (start === true) {
+            grassY += 0.5;
+            playerY += 0.5;
+        }
 
-    gameBackground();
+        for (var i = 0; i < carX.length; i++) {
+            carX[i] += i > 2 ? -2 : 2;
+        }
 
-    if (start === true) {
-        grassY += 0.5;
-        playerY += 0.5;
+        logX[0] += 2;
+        logX[1] -= 2;
+        logX[2] += 2;
+        logX[3] -= 2;
+        logX[4] -= 2;
+        logX[5] += 2;
+        logX[6] -= 2;
+        
+        trainX -= 20;
+
+        for (var i = 0; i < roadY1.length; i++) {
+            road1(0, grassY + roadY1[i]);
+        }
+        for (var i = 0; i < roadY2.length; i++) {
+            road2(0, grassY + roadY2[i]);
+        }
+        for (var i = 0; i < roadY3.length; i++) {
+            road3(0, grassY + roadY3[i]);
+        }
+        for (var i = 0; i < railRoadY.length; i++) {
+            traintracks(0, grassY + railRoadY[i]);
+        }
+
+        waterY = -325;
+
+        while (waterY > -2000) {
+            water(0, grassY + waterY);
+            waterY -= 550;
+        }
+
+        for (var i = 0; i < obstacle.x.length; i++) {
+            obstacleFunc(obstacle.x[i], obstacle.y[i] + grassY, obstacle.type[i]);
+        }
+
+        player();
+        eagle();
+        
+        if (start === true) {
+            textSize(50);
+            font(200, 50, score, color(255), color(0), 3);
+        } else {
+            // textSize(55);
+            // font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
+            // textSize(30);
+            // font(200, 150, "\n\n\n(simulated motor disability)", color(255), color(0), 3); 
+        }
+
+        winScreen();
+        gameOverScreen();
     }
-
-    for (var i = 0; i < carX.length; i++) {
-        carX[i] += i > 2 ? -2 : 2;
-    }
-
-    logX[0] += 2;
-    logX[1] -= 2;
-    logX[2] += 2;
-    logX[3] -= 2;
-    logX[4] -= 2;
-    logX[5] += 2;
-    logX[6] -= 2;
-    
-    trainX -= 20;
-
-    for (var i = 0; i < roadY1.length; i++) {
-        road1(0, grassY + roadY1[i]);
-    }
-    for (var i = 0; i < roadY2.length; i++) {
-        road2(0, grassY + roadY2[i]);
-    }
-    for (var i = 0; i < roadY3.length; i++) {
-        road3(0, grassY + roadY3[i]);
-    }
-    for (var i = 0; i < railRoadY.length; i++) {
-        traintracks(0, grassY + railRoadY[i]);
-    }
-
-    waterY = -325;
-
-    while (waterY > -2000) {
-        water(0, grassY + waterY);
-        waterY -= 550;
-    }
-
-    for (var i = 0; i < obstacle.x.length; i++) {
-        obstacleFunc(obstacle.x[i], obstacle.y[i] + grassY, obstacle.type[i]);
-    }
-
-    player();
-    eagle();
-    
-    if (start === true) {
-        textSize(50);
-        font(200, 50, score, color(255), color(0), 3);
-    } else {
-        textSize(55);
-        font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
-        textSize(30);
-        font(200, 150, "\n\n\n(simulated visual disability)", color(255), color(0), 3);
-    }
-
-    winScreen();
-    gameOverScreen();
 };
 
 void keyReleased() {
+    if (playGame && keyCode === RIGHT) {     
+        loop();     
+    }       
+
+    if (firstTime && keyCode === RIGHT) {       
+        firstTime = false;      
+    }       
+
+    if (titleScreen) {      
+        titleScreen = false;        
+        gameBackground();       
+        showTitleScreen();      
+    }
 
     if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
         playerX -= 25;
@@ -572,6 +617,7 @@ void keyPressed() {
 
     if (win === true || gameOver === true) {
         setup();
+        secondTime = true;
         loop();
     }
 }
@@ -604,6 +650,14 @@ void setup() {
     start = false;
     win = false;
     gameOver = false;
+    move = false;
+    currentKey = 0;
+    previousKey = 0;
+    firstTime = true;
+    secondTime = false;
+    playGame = false;
+    titleScreen = false;
+        
 
     obstacle = {
 
