@@ -540,7 +540,7 @@ var game = function() {
             // textSize(55);
             // font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
             // textSize(30);
-            // font(200, 150, "\n\n\n(hisimulated motor disability)", color(255), color(0), 3); 
+            // font(200, 150, "\n\n\n(simulated motor disability)", color(255), color(0), 3); 
         }
 
         winScreen();
@@ -562,31 +562,31 @@ void keyReleased() {
         showTitleScreen();      
     }
     if (move && previousKey === currentKey)  {
-        if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
-            playerX -= 25;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            start = true;
-        }
+        // if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
+        //     playerX -= 25;
+        //     obstacle.l = false;
+        //     obstacle.r = false;
+        //     obstacle.u = false;
+        //     obstacle.d = false;
+        //     obstacle.l = false;
+        //     obstacle.r = false;
+        //     obstacle.u = false;
+        //     obstacle.d = false;
+        //     start = true;
+        // }
 
-        if (keyCode === RIGHT && obstacle.l === false && playerX < 330 && playerY < 375) {
-            playerX += 25;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            obstacle.l = false;
-            obstacle.r = false;
-            obstacle.u = false;
-            obstacle.d = false;
-            start = true;
-        }
+        // if (keyCode === RIGHT && obstacle.l === false && playerX < 330 && playerY < 375) {
+        //     playerX += 25;
+        //     obstacle.l = false;
+        //     obstacle.r = false;
+        //     obstacle.u = false;
+        //     obstacle.d = false;
+        //     obstacle.l = false;
+        //     obstacle.r = false;
+        //     obstacle.u = false;
+        //     obstacle.d = false;
+        //     start = true;
+        // }
 
         if (keyCode === UP && obstacle.d === false && playerY < 375) {
             playerY -= 25;
