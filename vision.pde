@@ -656,7 +656,7 @@ void setup() {
     secondTime = false;
     playGame = false;
     titleScreen = false;
-        
+    firstTime = true;
 
     obstacle = {
 
