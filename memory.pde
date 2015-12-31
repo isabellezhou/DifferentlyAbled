@@ -458,7 +458,7 @@ var introScreen = function() {
         text("\nMEMORY DISABILITIES\n\n", 200, 50);
         textFont(createFont("Roboto"));
         textSize(20);
-        text("\n\n\nMemory and other mental disabilities can \n greatly hinder one's  ability to live and work,\n but with tools such as trained therapists, \n surgery, and recovery programs, the \n differently abled  can lead relatively normal lives. \n \n Play this game to find out what it's like \n to navigate the world with a memory \n disability", 200, 150);  
+        text("\n\n\nMemory and other mental disabilities can \n greatly hinder one's  ability to live and work,\n but with tools such as trained therapists, \n surgery, and recovery programs, the \n differently abled \n can lead relatively normal lives. \n \n Play this game to find out what it's like \n to navigate the world with a memory \n disability", 200, 150);  
         textSize(20);   
         text("press right arrow to continue >>>", 250, 375);
     }      
