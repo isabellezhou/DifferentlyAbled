@@ -9,6 +9,10 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 	$("#wheelchairButton").click(function() {
+		$('html,body').animate({
+			scrollTop: $("#wheelchair").offset().top},
+			'slow');
+		
 	    $("#wheelchair").show();
 	    $("#wheelchairCanvas").focus();
 	    $("#vision").hide();
@@ -20,6 +24,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$("#visionButton").click(function() {
+		$('html,body').animate({
+			scrollTop: $("#vision").offset().top},
+			'slow');
 	    $("#vision").show();
 	    $("#visionCanvas").focus();
 	    $("#wheelchair").hide();
@@ -30,6 +37,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$("#memoryButton").click(function() {
+		$('html,body').animate({
+			scrollTop: $("#memory").offset().top},
+			'slow');
 		$("#memory").show();
 	    $("#memoryCanvas").focus();
 	    $("#vision").hide();
@@ -41,6 +51,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#originalButton").click(function() {
+    	$('html,body').animate({
+			scrollTop: $("#original").offset().top},
+			'slow');
     	$("#original").show();
         $("#originalCanvas").focus();
         $("#vision").hide();
