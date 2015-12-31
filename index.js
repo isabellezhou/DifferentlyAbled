@@ -4,6 +4,7 @@ $(document).ready(function() {
     $("#instructions").show();
     $("#wheelchair").hide();
     $("#wheelchairCanvas").focus();
+	$("#wheelchairCanvas").scrollTop(0);
     $("#vision").hide();
     $("#original").hide();
     $("#memory").hide();
@@ -15,6 +16,7 @@ $(document).ready(function(){
 		$("#instructions").hide();
 	    $("#wheelchair").show();
 	    $("#wheelchairCanvas").focus();
+	    $("#wheelchairCanvas").scrollTop(0);
 	    $("#vision").hide();
 	    $("#original").hide();
         $("#memory").hide();
@@ -27,6 +29,7 @@ $(document).ready(function(){
 		$("#instructions").hide();
 	    $("#vision").show();
 	    $("#visionCanvas").focus();
+	    $("#visionCanvas").scrollTop(0);
 	    $("#wheelchair").hide();
 	    $("#original").hide();
         $("#memory").hide();
@@ -41,6 +44,7 @@ $(document).ready(function(){
         $("#original").hide();
 	    $("#memory").show();
 	    $("#memoryCanvas").focus();
+	    $("#memoryCanvas").scrollTop(0);
 	});
 });
 
@@ -52,6 +56,7 @@ $(document).ready(function(){
         $("#wheelchair").hide();
         $("#original").show();
         $("#originalCanvas").focus();
+	    $("#originalCanvas").scrollTop(0);
         $("#memory").hide();
 
     });
