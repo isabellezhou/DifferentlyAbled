@@ -434,36 +434,31 @@ var winScreen = function() {
         rect(0, 200, 400, 50);
         fill(255);
         textSize(35);
-        text("You Win!", 200, 150);
-        text("Click To Play Again", 200, 225);
+        text("YOU WIN!", 200, 150);
+        text("right arrow to play again", 200, 225);
     }
 };
 
 var introScreen = function() {   
     if (!secondTime) {
-        noLoop();       
-        // fill(0, 125, 255, 200);     
-        // rect(0, 0, 400, 50);        
-        textFont(createFont("Roboto"));
-        
+        noLoop();
+        fill(0, 0, 0, 200);
+        rect(0, 0, 400, 400);                  
+        textFont(createFont("Oswald")); 
         fill(255);      
-        textSize(25);       
-        text("About this disability", 200, 50);    
-        textSize(15);
-        text("Though visual disabilities are often associated with", 200, 150);        
-        text("complete blindness, there are varying degrees of disabilities.", 200, 200);        
-        text("Guide dogs, braille displays, and canes are some of the many ", 200, 250);  
-        text("options that the visually impaired use to live normal lives. ", 200, 300);        
-        text("Visual disabilities in the  developing world are often", 200, 350);  
-        text("caused by disease and are preventable.", 200, 400);   
-
-        textSize(25);   
-        text(">>>", 350, 375);
+        textSize(30);     
+        text("\nVISUAL DISABILITIES\n\n", 200, 50);
+        textFont(createFont("Roboto"));
+        textSize(20);
+        text("\n\n\nVisual disabilities can greatly hinder one's \n ability to live and work, but with tools\nsuch as guide dogs, braille displays, \n eyeglasses, and canes, the differently abled \n can lead relatively normal lives. \n \n Play this game to find out what it's like \n to navigate the world with limited color \n perception!", 200, 150);  
+        textSize(20);   
+        text("press right arrow to continue >>>", 250, 375);
     }      
     titleScreen = true;     
 };      
                         
-var showTitleScreen = function() {      
+var showTitleScreen = function() {  
+    textFont(createFont("Oswald"));    
     noLoop();       
     textSize(55);       
     font(200, 150, "DifferentlyAbled", color(255), color(0), 3);        
