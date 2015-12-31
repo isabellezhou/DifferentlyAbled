@@ -6,7 +6,7 @@ body {
 h1 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 72px;
-	color: rgb(0,210,210);
+	color: rgb(236,250,80);
 	padding:0px;
 }
 
@@ -14,14 +14,22 @@ h2 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 30px;
 	font-weight: 500;
-	color: rgb(255,255,240);
+	color: rgb(255,255,245);
 	padding:0px;
 }
 
 h3 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 50px;
-	color: rgb(0,210,210);
+	color: rgb(236,250,80);
+	padding:0px;
+}
+
+h4 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: 300;
+	color: rgba(255,255,245,0);
 	padding:0px;
 }
 
@@ -35,15 +43,9 @@ p {
 
 .title {
 	padding: 30px;
-	padding-bottom: 45px;
+	padding-bottom: 5px;
 	padding-top: 15px;
 }
-
-/*.game {
-	padding: 30px;
-	background-color: rgba(255,255,255,0.9);
-	background-size: 100% 100%;
-}*/
 
 .intro {
 	padding: 30px;

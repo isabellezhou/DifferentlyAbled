@@ -1,14 +1,5 @@
-//Instructions
 
-/**
- * Use the up arrow key to move foward
- * You can also use the left, right, and down arrow keys to move
- * Avoid the cars, trains, and water (use the logs to cross)
- * If you move to slow the eagle will catch you (once you see it you can't escape it)
- * The green and gray squares are trees and rocks
- * Score 100 points to win
- * Have fun!
-**/
+//inspired by CrossyRoad on Khan Academy
 
 var playerX = 188;
 var playerY = 275;
@@ -30,6 +21,7 @@ var score = 0;
 var start = false;
 var win = false;
 var firstTime = true;
+var secondTime = false; 
 var showObstacles = true;
 var playGame = false;
 var titleScreen = false;
@@ -115,35 +107,35 @@ var car = function(x, y, color, direction) {
         strokeWeight(1.5);
 
         if (color === "red") {
-            stroke(175, 0, 0);
-            fill(255, 0, 0);
+        stroke(153, 0, 76);
+        fill(204, 0, 102);
         }
         if (color === "blue") {
-            stroke(0, 75, 150);
-            fill(0, 100, 255);
+        stroke(51, 0, 102);
+        fill(76, 0, 153);
         }
         if (color === "orange") {
-            stroke(200, 50, 0);
-            fill(255, 85, 0);
+        stroke(255, 102, 178);
+        fill(255, 153, 204);
         }
         if (color === "yellow") {
-            stroke(200, 200, 0);
-            fill(255, 255, 0);
+        stroke(0, 128, 255);
+        fill(51, 153, 255);
         }
 
         rect(x, y, 45, 20);
 
         if (color === "red") {
-            fill(175, 0, 0);
+        fill(153, 0, 76);
         }
         if (color === "blue") {
-            fill(0, 75, 150);
+        fill(76, 0, 153);
         }
         if (color === "orange") {
-            fill(200, 50, 0);
+        fill(255, 102, 178);
         }
         if (color === "yellow") {
-            fill(200, 200, 0);
+        fill(0, 128, 255);
         }
 
         rect(x, y + 5, 45, 10);
@@ -195,7 +187,7 @@ var car = function(x, y, color, direction) {
 
 var road1 = function(x, y) {
 
-    fill(75);
+    fill(0);
     rect(x, y, 400, 25);
 
     car(carX[0], y + 2, "red", "right");
@@ -205,7 +197,7 @@ var road1 = function(x, y) {
 
 var road2 = function(x, y) {
 
-    fill(75);
+    fill(0);
     rect(x, y, 400, 50);
 
     for (var x = 20; x < 400; x += 65) {
@@ -223,7 +215,7 @@ var road2 = function(x, y) {
 
 var road3 = function(x, y) {
 
-    fill(75);
+    fill(0);
     rect(x, y, 400, 150);
 
     fill(100);
@@ -437,7 +429,7 @@ var gameOverScreen = function() {
 
 var winScreen = function() {
 
-    if (score === 100) {
+    if (score === 25) {
         win = true;
     }
 
@@ -449,24 +441,33 @@ var winScreen = function() {
         rect(0, 200, 400, 50);
         fill(255);
         textSize(35);
-        text("You Win!", 200, 150);
-        text("Click To Play Again", 200, 225);
+        text("YOU WIN!", 200, 150);
+        text("Press a Key to Play Again", 200, 225);
+        
     }
 };
 
 var introScreen = function() {
-    noLoop();
-    fill(0, 125, 255, 200);
-    rect(0, 0, 400, 50);
-    fill(255);
-    textSize(25);
-    text("Here is some introductory material...", 200, 150);
-    text(">>>", 350, 375);
-    titleScreen = true;
+    if (!secondTime) {
+        noLoop();
+        fill(0, 0, 0, 200);
+        rect(0, 0, 400, 400);                  
+        textFont(createFont("Oswald")); 
+        fill(255);      
+        textSize(30);     
+        text("\nMEMORY DISABILITIES\n\n", 200, 50);
+        textFont(createFont("Roboto"));
+        textSize(20);
+        text("\n\n\nMemory and other mental disabilities can \n greatly hinder one's  ability to live and work,\n but with tools such as trained therapists, \n surgery, and recovery programs, the \n differently abled \n can lead relatively normal lives. \n \n Play this game to find out what it's like \n to navigate the world with a memory \n disability", 200, 150);  
+        textSize(20);   
+        text("press right arrow to continue >>>", 250, 375);
+    }      
+    titleScreen = true;   
 };
 
 var showTitleScreen = function() {
     noLoop();
+    textFont(createFont("Oswald")); 
     textSize(55);
     font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
     textSize(30);
@@ -476,7 +477,6 @@ var showTitleScreen = function() {
 };
 
 var game = function() {
-
     textFont(createFont("Oswald"));
     textAlign(CENTER, CENTER);
     
@@ -534,7 +534,12 @@ var game = function() {
         
         if (start === true) {
             textSize(50);
-            font(200, 50, score, color(255), color(0), 3);
+            if (score === 1) {
+                font(200, 50, score + " meter", color(255), color(0), 3);
+
+            } else {
+                font(200, 50, score + " meters", color(255), color(0), 3);
+            }
         } else {
             textSize(55);
             font(200, 150, "DifferentlyAbled", color(255), color(0), 3); 
@@ -553,7 +558,7 @@ void keyReleased() {
     } else {
         showObstacles = true;
     }
-    if (playGame) {
+    if (playGame && keyCode === RIGHT) {
         loop();
     }
     if (firstTime && keyCode === RIGHT) {
@@ -565,31 +570,31 @@ void keyReleased() {
         showTitleScreen();
     }
     
-    if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
-        playerX -= 25;
-        obstacle.l = false;
-        obstacle.r = false;
-        obstacle.u = false;
-        obstacle.d = false;
-        obstacle.l = false;
-        obstacle.r = false;
-        obstacle.u = false;
-        obstacle.d = false;
-        start = true;
-    }
+    // if (keyCode === LEFT && obstacle.r === false && playerX > 40 && playerY < 375) {
+    //     playerX -= 25;
+    //     obstacle.l = false;
+    //     obstacle.r = false;
+    //     obstacle.u = false;
+    //     obstacle.d = false;
+    //     obstacle.l = false;
+    //     obstacle.r = false;
+    //     obstacle.u = false;
+    //     obstacle.d = false;
+    //     start = true;
+    // }
 
-    if (keyCode === RIGHT && obstacle.l === false && playerX < 330 && playerY < 375) {
-        playerX += 25;
-        obstacle.l = false;
-        obstacle.r = false;
-        obstacle.u = false;
-        obstacle.d = false;
-        obstacle.l = false;
-        obstacle.r = false;
-        obstacle.u = false;
-        obstacle.d = false;
-        start = true;
-    }
+    // if (keyCode === RIGHT && obstacle.l === false && playerX < 330 && playerY < 375) {
+    //     playerX += 25;
+    //     obstacle.l = false;
+    //     obstacle.r = false;
+    //     obstacle.u = false;
+    //     obstacle.d = false;
+    //     obstacle.l = false;
+    //     obstacle.r = false;
+    //     obstacle.u = false;
+    //     obstacle.d = false;
+    //     start = true;
+    // }
 
     if (keyCode === UP && obstacle.d === false && playerY < 375) {
         playerY -= 25;
@@ -615,7 +620,9 @@ void keyReleased() {
         obstacle.r = false;
         obstacle.u = false;
         obstacle.d = false;
-        score--;
+        if (score > 0) {
+            score--;
+        }
         start = true;
     }
 }
@@ -624,6 +631,7 @@ void keyPressed() {
 
     if (win === true || gameOver === true) {
         setup();
+        secondTime = true;
         loop();
     }
 }
@@ -657,6 +665,7 @@ void setup() {
     win = false;
     gameOver = false;
     firstTime = true;
+    secondTime = false;
     showObstacles = true;
     playGame = false;
     titleScreen = false;

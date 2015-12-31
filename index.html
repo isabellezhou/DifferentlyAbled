@@ -14,6 +14,8 @@
 
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+        <link rel="icon" type="image/png" href="http://medicare-ventura-hicap.org/wp-content/uploads/2012/03/hicap-disabled-276x300.png">
 	
 	</head>
 
@@ -22,52 +24,43 @@
 		<div class = "title">
 			<center>
 				<h1>DifferentlyAbled</h1>
-				<h2> One person in five suffers from a disability. <br> Play this game to find out more! </h2>
-				<br>
 			</center>
-		<!-- 	Game -->
-			<center>
-				<button id="wheelchairButton">Motor Disability</button>
-				<button id="visionButton">Visual Disability</button>
-				<button id="memoryButton">Memory Disability</button>
-				<button id="originalButton">Without Disability</button>
-			</center>
-			<br>
-			<center> 
-				<div id = "wheelchair">
-					<canvas data-processing-sources="wheelchair.pde"></canvas>
-				</div>
-				<div id = "vision">
-					<canvas data-processing-sources="vision.pde"></canvas>
-				</div>
-				<div id = "memory">
-					<canvas  data-processing-sources="memory.pde"></canvas>
-				</div>
-				<div id = "original">
-					<canvas data-processing-sources="index.pde"></canvas>
-				</div>
-			</center>
-		</div>
-
-		<div class = "game">
-			<!-- <center>
-				<button id="wheelchairButton">Motor Disability</button>
-				<button id="visionButton">Visual Disability</button>
-				<button>3</button>
-				<button id="originalButton">Without Disability</button>
-			</center>
-			<br>
-			<center> 
-				<div id = "wheelchair">
-					<canvas id="wheelchair" data-processing-sources="wheelchair.pde"></canvas>
-				</div>
-				<div id = "vision">
-					<canvas id="vision" data-processing-sources="vision.pde"></canvas>
-				</div>
-				<div id = "original">
-					<canvas id="original" data-processing-sources="index.pde"></canvas>
-				</div>
-			</center> -->
+			<table>
+				<tr>
+					<td style = "width: 50%">
+						<!-- GAME -->
+						<center> <h2> One person in five suffers from a disability. <br> Play this game to find out more! </h2></center>
+						<center>
+							<button id="memoryButton">Memory Disability</button>
+							<button id="wheelchairButton">Motor Disability</button>
+							<button id="visionButton">Visual Disability</button>
+							<button id="originalButton">Without Disability</button>
+						</center>
+						<br>
+						<center> 
+							<div id = "memory">
+								<canvas id="memoryCanvas" data-processing-sources="memory.pde"></canvas>
+								<p>For more information about memory disabilities, please check out <a href="http://ldaamerica.org/types-of-learning-disabilities/memory/"target="_blank">this</a> website.</p>
+							</div>
+							<div id = "wheelchair">
+								<canvas id="wheelchairCanvas" data-processing-sources="wheelchair.pde"></canvas>
+								<p>For more information about motor disabilities, please check out <a href="http://webaim.org/articles/motor/"target="_blank">this</a> website.</p>
+							</div>
+							<div id = "vision">
+								<canvas id="visionCanvas" data-processing-sources="vision.pde"></canvas>
+								<p>For more information about vision disabilities, please check out <a href="http://www.afb.org/default.aspx"target="_blank">this</a> website.</p>
+							</div>
+							<div id = "original">
+								<canvas id="originalCanvas" data-processing-sources="index.pde"></canvas>
+								<p>For more information about disabilities in general, please check out <a href="https://www.disability.gov"target="_blank">this</a> website.</p>
+							</div>
+						</center>
+					</td>
+					<td style = "width:50%">
+					<!-- MAP -->
+					</td>
+				</tr>
+			</table>
 		</div>
 
 		<div class = "intro">
@@ -79,20 +72,24 @@
 			<center><h3>Video</h3></center>
 		</div>
 
-<!-- MORE IMAGE LINKS/POSTIMAGE.ORG -->
-<!-- http://s28.postimg.org/oqgxnv4r1/facebook.png -->
-<!-- http://s8.postimg.org/xovgxjvet/youtube.png -->
 		<div class = "about">
 			<center>
 				<center><h3> Creators </h3></center>
 				<table style = "width:85%">
 					<tr>
-						<td style = "width: 50%"><center><h2>HELEN YANG</h2><p>Coming soon!</p></center></td>
-						<td><center><h2>ISABELLE ZHOU</h2><p>Isabelle is a junior at University High School who is passionate about social entrepreneurship and innovating for social good. After participating in Ted Drake's accessibility workshop and performing hands-on experiments in the user experience labs at Intuit's headquarters last summer, she has been inspired to use her skills to assist the differently abled. She worked primarily on DifferentlyAbled's front end through building the webpage, designing game graphics, and helping to produce the video.</p></center></td>
+						<td style = "width: 50%">
+							<center><h2>HELEN YANG</h2></center>
+						</td>
+						<td style = "width: 50%">
+							<center><h2>ISABELLE ZHOU</h2></center>
 					</tr>
 					<tr>
-						<td><center><img src="http://s4.postimg.org/bec65y0xp/linkedin.png" alt="LinkedIn" style="width:65px;height:65px;"></center></td>
-						<td><center><a href = "https://www.linkedin.com/in/isabellezhou"><img src="http://s4.postimg.org/bec65y0xp/linkedin.png" alt="LinkedIn" style="width:65px;height:65px;"> <a href = "https://www.twitter.com/isabelle_zhou"><img src="http://s9.postimg.org/cdd1z75xb/twitter.png" alt="Twitter" style="width:65px;height:65px;">
+						<td><center><p>Helen is a junior at University High School who was inspired by her summer at Intel through the Girls Who Code Summer Immersion Program to use the power of code for the benefit of society. She was interested in creating a game and in raising awareness about a problem that often overlooked by society and the government, which led to the creation of DifferentlyAbled. She worked primarily on the project's backend, such as the JavaScript games and the map code.</p></center></td>
+						<td><center><p>Isabelle is a junior at University High School who is passionate about social entrepreneurship and innovating for social good. After participating in Ted Drake's accessibility workshop and performing hands-on experiments in the user experience labs at Intuit's headquarters last summer, she has been inspired to use her skills to assist the differently abled. She worked primarily on DifferentlyAbled's front end through building the webpage, designing game and map graphics, and helping to produce the video.</p></center></td>
+					</tr>
+					<tr>
+						<td><center><a href = "https://www.linkedin.com/in/helenyang0" target="_blank"><img src="http://s4.postimg.org/bec65y0xp/linkedin.png" alt="LinkedIn" style="width:65px;height:65px;"></center></td>
+						<td><center><a href = "https://www.linkedin.com/in/isabellezhou" target="_blank"><img src="http://s4.postimg.org/bec65y0xp/linkedin.png" alt="LinkedIn" style="width:65px;height:65px;"> <a href = "https://www.twitter.com/isabelle_zhou" target="_blank"><img src="http://s9.postimg.org/cdd1z75xb/twitter.png" alt="Twitter" style="width:65px;height:65px;">
 						</center></td>
 					</tr>
 				</table>

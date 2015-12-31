@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>Ice cream stahps for you</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+	<script src="tabletop1.3.4.js"></script>
+	<script src='https://code.jquery.com/jquery-2.1.4.js'></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+
+	<style>
+	  body { margin:0; padding:0;   background: linear-gradient(#CCFFFF, #FFFFFF);}
+	  #container { position:static; margin: 0px auto; width: 80%; text-shadow: 0 0 100px #FF0000;}
+	  #map { position:static; height: 500px; width:60%; margin:50px;  padding: 20px;
+		   margin: 10px;
+		   background: #FF3399;
+		   color: #CCFFFF;
+		   font-size: 21px;
+		   font-weight: bold;
+		   line-height: 1.3em;
+		   border: 2px dashed #CCFFFF;
+		   border-radius: 10px;
+		   box-shadow: 0 0 0 4px #FF3399, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+		   text-shadow: -1px -1px #aa3030;
+		   font-weight: normal;}
+	  .poop {
+	  	width: 20%;
+	  	right: 0px;
+    	position: static;
+	  }
+	  h1 {
+	  	position:static; margin: 0px auto; width: 80%; text-shadow: 0 0 100px #FF0000;
+	  	font-family: 'Coming Soon', cursive;
+	  	font-size: 102px;
+	  	text-align: center;
+	  	color: #FF33CC;
+	  }
+	  .halla {
+	  	position:static; margin: 0px auto; width: 80%; text-shadow: 0 0 100px #FF0000;
+	  	font-family: 'Coming Soon', cursive;
+	  	font-size: 42px;
+	  	text-align: center;
+	  	color: #FF33CC;
+	  }
+	  h2 {
+	  	font-family: 'Coming Soon', cursive;
+	  	font-size: 35px;
+	  }
+	  table {
+	  		background: #FF3399;
+		    color: #CCFFFF;
+		    font-size: 21px;
+		    font-weight: bold;
+		    line-height: 1.3em;
+		    border: 2px dashed #CCFFFF;
+		    border-radius: 10px;
+		    box-shadow: 0 0 0 4px #ff0030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+		    text-shadow: -1px -1px #aa3030;
+		    font-weight: normal;
+	  }
+	  a:link{color:white; background-color:transparent;}
+	  a:hover{color:#CCFFFF; background-color:transparent;}
+
+	</style>
+	<style>
+	.popup {
+	  text-align:center;
+	  }
+	.popup .slideshow .image        { display:none; }
+	.popup .slideshow .image.active { display:block; }
+	.popup .slideshow img {
+	  width:100%;
+	  }
+	.popup .slideshow .caption {
+	  background:#eee;
+	  padding:10px;
+	  }
+	.popup .cycle {
+	  padding:10px 0 20px;
+	  }
+	  .popup .cycle a.prev { float:left; }
+	  .popup .cycle a.next { float:right; }
+	</style>
+</head>
+
+<body>
+<h1>Ye ol' ice crum</h1>
+<h2 class="halla">Ice Crem Stops Para Ti!!!!</h2>
+<a href="https://docs.google.com/a/burlingamehighschool.org/forms/d/1saC5ZYmazAxlrpJXFS7H0bHlImQnKLqVW8WTXwTNIP8/viewform" target="_blank" class="halla"><h2>click hur to add more ice crum locos!</h2></a>
+<br><marquee><img src="mmm.png" width="300"></marquee></br>
+<div id='container'>
+		<table align = "right" class = "poop">
+		  <tr>
+		    <td><li><a href="http://creamnation.com/" target="_blank">
+			<h2 onmouseover="bigFont(this)" onmouseout="normalFont(this)">Cream</h2>
+			</a> </li></td>
+		  </tr>
+		  <tr>
+		    <td><li ><a href="http://www.ghirardellisq.com/" target="_blank">
+			<h2 onmouseover="bigFont(this)" onmouseout="normalFont(this)">Ghiradelli's</h2>
+			</a> </li></td>
+		  </tr>
+		  <tr>
+		    <td><li ><a href="http://www.lovemariannes.com/" target="_blank">
+			<h2 onmouseover="bigFont(this)" onmouseout="normalFont(this)">Marianne's</h2>
+			</a> </li></td>
+		  </tr>
+		  <tr>
+		    <td><li ><a href="http://mitchellsicecream.com/" target="_blank">
+			<h2 onmouseover="bigFont(this)" onmouseout="normalFont(this)">Mitchell's</h2>
+			</a> </li></td>
+		  </tr>
+		  <tr>
+		    <td><li ><a href="http://smittenicecream.com/" target="_blank">
+			<h2 onmouseover="bigFont(this)" onmouseout="normalFont(this)">Smitten's</h2>
+			</a> </li></td>
+		  </tr>
+		</table>
+   	<div id='map'></div>
+
+</div>
+<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script src='icecream.js'></script>
+</body>
+
+</html>
