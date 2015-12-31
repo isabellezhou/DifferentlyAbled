@@ -444,11 +444,22 @@ var winScreen = function() {
 var introScreen = function() {   
     if (!secondTime) {
         noLoop();       
-        fill(0, 125, 255, 200);     
-        rect(0, 0, 400, 50);        
+        // fill(0, 125, 255, 200);     
+        // rect(0, 0, 400, 50);        
+        textFont(createFont("Roboto"));
+        
         fill(255);      
         textSize(25);       
-        text("Here is some introductory material...", 200, 150);        
+        text("About this disability", 200, 50);    
+        textSize(15);
+        text("Though visual disabilities are often associated with", 200, 150);        
+        text("complete blindness, there are varying degrees of disabilities.", 200, 200);        
+        text("Guide dogs, braille displays, and canes are some of the many ", 200, 250);  
+        text("options that the visually impaired use to live normal lives. ", 200, 300);        
+        text("Visual disabilities in the  developing world are often caused by disease and are preventable.", 200, 350);  
+        text("caused by disease and are preventable.", 200, 400);   
+
+        textSize(25);   
         text(">>>", 350, 375);
     }      
     titleScreen = true;     
