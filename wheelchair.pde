@@ -453,7 +453,7 @@ var introScreen = function() {
         rect(0, 0, 400, 50);        
         fill(255);      
         textSize(25);       
-        text("Here is some introductory material...", 200, 150);        
+        text("Motor disabilities range from temporary injuries resulting from accidents to serious diseases such as cerebral palsy. Treatments can include physical, occupational, and speech therapy.\n\n In this game, it takes two keypresses to move once and you are unable to move left and right.", 200, 150);        
         text(">>>", 350, 375);
     }      
     titleScreen = true;     
