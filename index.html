@@ -31,8 +31,8 @@
 						<!-- GAME -->
 						<center> <h2> One person in five suffers from a disability. <br> Play this game to find out more! </h2></center>
 						<center>
-							<button id="memoryButton">Memory Disability</button>
 							<button id="wheelchairButton">Motor Disability</button>
+							<button id="memoryButton">Memory Disability</button>
 							<button id="visionButton">Visual Disability</button>
 							<button id="originalButton">Without Disability</button>
 						</center>
@@ -58,9 +58,22 @@
 					</td>
 					<td style = "width:50%">
 					<!-- MAP -->
+						<center> <h2> Are you differently abled? Enter your zip code and special needs to find accessible places near you! </h2> </center> <br> <br>
 						<center>
 							<iframe src="https://www.google.com/maps/d/embed?mid=zaDdqtiaIWEc.kZDeTpZLNYfc" width="400" height="400"></iframe>
 						</center>
+						<center><form>
+							<table>
+								<tr>
+									<td style = 50%>
+										 <p>Zip Code: <input type="text" name="zipcode" value="92612"></p><br>
+									</td>
+									<td>
+										<p>Special Needs: <input type="text" name="specialneeds" value="Motor, Visual"></p>
+						 			</td>
+						 		</tr>
+						 	</table>
+						</form></center>
 					</td>
 				</tr>
 			</table>
