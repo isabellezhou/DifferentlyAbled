@@ -1,4 +1,3 @@
-
 //inspired by CrossyRoad on Khan Academy
 
 var playerX = 188;
