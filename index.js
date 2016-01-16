@@ -1,10 +1,8 @@
-
 $(document).ready(function() {
     $("#wheelchair").show();
     $("#vision").hide();
     $("#original").hide();
     $("#memory").hide();
-
 });
 
 $(document).ready(function(){
@@ -12,13 +10,11 @@ $(document).ready(function(){
 		$('html,body').animate({
 			scrollTop: $(".title").offset().top},
 			'slow');
-		
 	    $("#wheelchair").show();
 	    $("#wheelchairCanvas").focus();
 	    $("#vision").hide();
 	    $("#original").hide();
         $("#memory").hide();
-
 	});
 });
 
@@ -47,7 +43,6 @@ $(document).ready(function(){
         $("#original").hide();
 	});
 });
-
 
 $(document).ready(function(){
     $("#originalButton").click(function() {
